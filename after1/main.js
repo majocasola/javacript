@@ -111,6 +111,9 @@ let menor = Infinity;
 let n = +(prompt('Ingrese cantidad de numeros'));
 
 
+
+
+
 for (i=0; i<n; i++){
     numero = +(prompt('Ingrese un numero'));
     sumatoria += numero;
