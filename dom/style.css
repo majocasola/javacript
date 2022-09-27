@@ -1,0 +1,9 @@
+.contenedor {
+    color: blue
+}
+
+.contenedorActivo {
+    color: darkkhaki;
+    font-size: 12px;
+    border: 2px
+}
