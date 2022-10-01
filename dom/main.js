@@ -73,12 +73,12 @@
 
 
 
-const productos = [
-    { id: 100, nombre: 'zapatos adidas', precio: 100 },
-    { id: 101, nombre: 'zapatos nike', precio: 120 },
-    { id: 102, nombre: 'zapatos puma', precio: 42500 },
-    { id: 103, nombre: 'vestido', precio: 360 },
-]
+// const productos = [
+//     { id: 100, nombre: 'zapatos adidas', precio: 100 },
+//     { id: 101, nombre: 'zapatos nike', precio: 120 },
+//     { id: 102, nombre: 'zapatos puma', precio: 42500 },
+//     { id: 103, nombre: 'vestido', precio: 360 },
+// ]
 
 // const producto1 = '<div><h3>' + productos[0].nombre + '</h3><p>Precio: $' + productos[0].precio + '</p><p>Id: ' + productos[0].id + '</p></div>';
 
@@ -123,4 +123,64 @@ document.body.append(parrafo);
 const fuera = document.getElementById('fuera');
 fuera.remove();
 
-// 1:40
+
+// Plantillas literales E innerHTML
+
+
+
+const productos = [
+    { id: 100, nombre: 'zapatos adidas', precio: 100 },
+    { id: 101, nombre: 'zapatos nike', precio: 120 },
+    { id: 102, nombre: 'zapatos puma', precio: 42500 },
+    { id: 103, nombre: 'vestido', precio: 360 },
+]
+
+
+// function mostrarProductosEnDom() {
+//     let html = '';
+//     for (let i = 0; i < productos.length; i++) {
+//         html = html +
+//             `<div>
+//                 <h3>${productos[i].nombre}</h3>
+//                 <p>Precio: $ ${productos[i].precio}</p>
+//                 <p>Id: ${productos[i].id} </p>
+//             </div>`;
+//     }
+
+//     document.getElementById('contenedor-productos').innerHTML = html;
+// }
+
+// mostrarProductosEnDom();
+
+
+
+// con otro for 
+
+function mostrarProductosEnDom() {
+    let html = '';
+    for (const producto of productos) {
+        html = html +
+            `<div>
+                    <h3>${producto.nombre}</h3>
+                    <p>Precio: $ ${producto.precio}</p>
+                    <p>Id: ${producto.id} </p>
+                </div>`;
+    }
+
+    document.getElementById('contenedor-productos').innerHTML = html;
+}
+
+mostrarProductosEnDom();
+
+
+
+// QUERY SELECTOR
+
+// puedo seleccionar la etiqueta <p>  siguiendo la sintaxis de CSS para selectores
+let query = document.querySelector('#contenedor-query p')
+
+// seleccionar solo el contenedor por id con #
+let contenedor = document.querySelector('#contenedor-query')
+
+// o por clase
+query = document.querySelector('.texto')
